@@ -14259,25 +14259,37 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Milestone-1">Milestone 1<a class="anchor-link" href="#Milestone-1">&#182;</a></h1><h3 id="Ajit-Alapati-and-Samuel-Kellum">Ajit Alapati and Samuel Kellum<a class="anchor-link" href="#Ajit-Alapati-and-Samuel-Kellum">&#182;</a></h3>
-<pre><code>For our collaboration plan, we decided to meet up in person to discuss what data about New Orleans we wanted to discuss. We set up a GitHub repository at first where we have been putting our data sources.
-
-We did face some initial challenges setting up the GitHub page because neither of us has ever created a GitHub page. Additionally, we had some small issues initializing the repository with the GitHub page because of GitHub’s new authentication features. In August, GitHub required that we use personal authentication tokens instead of account passwords when using its version control on the command line. Importing the data into the Jupyter Notebook and tidying the data by deleting unnecessary rows was pretty easy since we have already imported CSV files into a notebook in the labs. However, we faced some challenges displaying the Notebook on the GitHub page. We did not realize that all we have to do is to download the notebook as an html export. We learn something new everyday! If you are reading this on the webpage, and the page looks like a Jupyter Notebook, then that means we figured it out!
-
-Our planned technologies, as of now, are Docker, the Jupyter Notebook, Python, and all of the libraries it provides. We have not yet discussed in detail the libraries that we will use, but we will definitely be using Pandas, Numpy, and Matplotlib. We have each other’s phone numbers to contact each other about the project, and will most likely meet throughout the semester one or two times per week in person to work on the project. Both of us were interested in data about crime in New Orleans in addition to how the city has recovered from Hurricane Katrina.
-
-We wanted to look into policing violence and where these incidents were happening in the city. These sorts of data sets open up many possible questions and avenues that we can go down. For example, we were discussing combining datasets to determine who and where these violent interactions were happening. Were they happening disproportionately in poor areas? Were they happening disproportionately towards African Americans? 
-
-Additionally, we are interested in exploring how different parts of the city have recovered from Hurricane Katrina. For example, even 15 years later, we know that New Orleans has still not fully recovered in population from before the storm. One dataset we found has information on the status of various houses that have been destroyed by the hurricane. It makes sense that the most essential functions of the city would be repaired first, but poor people who were displaced from New Orleans likely did not have as strong of an alternative outside of their homes and needed their houses repaired quickly. Did it take longer to rebuild houses in poor areas? Are some of those houses still destroyed? Are there significantly more vacant houses in poor areas that were destroyed by the hurricane?</code></pre>
+<h1 id="Police-Brutality-in-New-Orleans">Police Brutality in New Orleans<a class="anchor-link" href="#Police-Brutality-in-New-Orleans">&#182;</a></h1><h3 id="Ajit-Alapati-and-Samuel-Kellum">Ajit Alapati and Samuel Kellum<a class="anchor-link" href="#Ajit-Alapati-and-Samuel-Kellum">&#182;</a></h3><p>For our collaboration plan, we decided to meet up in person to discuss what data about New Orleans we wanted to discuss. We set up a GitHub repository at first where we have been putting our data sources.</p>
+<p>We did face some initial challenges setting up the GitHub page because neither of us has ever created a GitHub page. Additionally, we had some small issues initializing the repository with the GitHub page because of GitHub’s new authentication features. In August, GitHub required that we use personal authentication tokens instead of account passwords when using its version control on the command line. Importing the data into the Jupyter Notebook and tidying the data by deleting unnecessary rows was pretty easy since we have already imported CSV files into a notebook in the labs, except for one minor problem with the del function syntax (which we found from a previous Final Tutorial example). However, we faced some challenges displaying the Notebook on the GitHub page. We did not realize that all we have to do is to download the notebook as an html export. We learn something new everyday, to read all of the project instructions! If you are reading this on the webpage, and the page looks like a Jupyter Notebook, then that means we figured it out!</p>
+<p>Our planned technologies, as of now, are Docker, the Jupyter Notebook, Python, and all of the libraries it provides. We have not yet discussed in detail the libraries that we will use, but we will definitely be using Pandas, Numpy, and Matplotlib. We have each other’s phone numbers to contact each other about the project, and will most likely meet throughout the semester one or two times per week in person to work on the project. Both of us were interested in data about crime in New Orleans in addition to how the city has recovered from Hurricane Katrina.</p>
+<p>We wanted to look into policing violence and where these incidents were happening in the city. These sorts of data sets open up many possible questions and avenues that we can go down. For example, we were discussing combining datasets to determine who and where these violent interactions were happening. Were they happening disproportionately in poor areas? Were they happening disproportionately towards African Americans?</p>
+<p>Additionally, we are interested in exploring how different parts of the city have recovered from Hurricane Katrina. For example, even 15 years later, we know that New Orleans has still not fully recovered in population from before the storm. One dataset we found has information on the status of various houses that have been destroyed by the hurricane. It makes sense that the most essential functions of the city would be repaired first, but poor people who were displaced from New Orleans likely did not have as strong of an alternative outside of their homes and needed their houses repaired quickly. Did it take longer to rebuild houses in poor areas? Are some of those houses still destroyed? Are there significantly more vacant houses in poor areas that were destroyed by the hurricane?</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load Numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># Load MatPlotLib</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># Load Pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Load-Numpy">Load Numpy<a class="anchor-link" href="#Load-Numpy">&#182;</a></h1><p>import numpy as np</p>
-<h1 id="Load-MatPlotLib">Load MatPlotLib<a class="anchor-link" href="#Load-MatPlotLib">&#182;</a></h1><p>import matplotlib
-import matplotlib.pyplot as plt</p>
-<h1 id="Load-Pandas">Load Pandas<a class="anchor-link" href="#Load-Pandas">&#182;</a></h1><p>import pandas as pd</p>
+<p>The source of the csv file: <a href="https://data.nola.gov/Public-Safety-and-Preparedness/NOPD-Misconduct-Complaints/gz2m-ef5u">https://data.nola.gov/Public-Safety-and-Preparedness/NOPD-Misconduct-Complaints/gz2m-ef5u</a></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14668,7 +14680,7 @@ import matplotlib.pyplot as plt</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Since this data frame does not contain useful information about Officer years of service, we will drop this column</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Since this data frame does not contain useful information (only four NaN values), we will drop this column as well</span>
 <span class="n">police_complaint_df</span><span class="p">[</span><span class="s1">&#39;Officer years of service&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
