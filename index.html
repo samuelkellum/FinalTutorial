@@ -14305,14 +14305,16 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><h2 align='center'>1. Introduction </h2>
 <br></p>
-<p>Shortly following the death of George Floyd while in custody of the police, the topic of police brutality has gained a lot of attention across the United States. According to <a href='https://thelawdictionary.org/article/what-is-police-brutality/'>The Law Dictionary</a>, "Police brutality is the use of excessive and/or unnecessary force by police when dealing with civilians." Ever since George Floyd's death, there have been protests across the country calling to reform the police system. One of the biggest issues raised during these protests is that black people are disproportionately targeted by the police, and that police are more aggressive when encountering black people.</p><p>This issue is prevalent in New Orleans becasue the city has a high proprtion of black people, almost 60% according to <a href='https://www.census.gov/quickfacts/fact/table/US,neworleanscitylouisiana/LND110210'>the US Census</a>, compared to about 13% nationally. Therefore, this issue of the police disproportionately targeting black people is a serious issue in our community.</p><p>For this project, we will be analyzing whether police interactions in New Orleans involving use of force disproportionately affect people of different ethnicities at different levels. For example, if race is not a factor in police interactions involving use of force, the distribution of ethnicities of these interactions should be similar to the population demographics.</p>
+<p>Shortly following the death of George Floyd while in custody of the police, the topic of police brutality has gained a lot of attention across the United States. According to <a href='https://thelawdictionary.org/article/what-is-police-brutality/'>The Law Dictionary</a>, "Police brutality is the use of excessive and/or unnecessary force by police when dealing with civilians." Ever since George Floyd's death, there have been protests across the country calling to reform the police system. One of the biggest issues raised during these protests is that black people are disproportionately targeted by the police, and that police are more aggressive when encountering black people.</p><p>This issue is important in New Orleans becasue the city has a high proprtion of black people, almost 60% according to <a href='https://www.census.gov/quickfacts/fact/table/US,neworleanscitylouisiana/LND110210'>the US Census</a>, compared to about 13% nationally. Therefore, this issue of the police disproportionately targeting black people is a serious issue in our community.</p><p>For this project, we will be analyzing whether police interactions in New Orleans involving use of force disproportionately affect people of different ethnicities at different levels. For example, if race is not a factor in police interactions involving use of force, the distribution of ethnicities of these interactions should be similar to the population demographics.</p>
 <p>Additionally, we will analyze for police interactions in New Orleans involving use of force, whether people of different races are more likely to get injured.</p>
-<p>We will also compare the results in New Orleans to Austin and Orlando.</p><p><p>In this analysis, we will answer the following questions:</p></p>
+<p>We will also compare the results in New Orleans to Austin and Orlando.</p><p>In this analysis, we will answer the following questions:</p>
 <ul>
 <li> Are black people in New Orleans more likely to be involved in police interactions involving use of force? </li>
-<li> Are black people more likely to be injured in police encounters involving use of force? </li>
+<li> Are people more likely to be injured in police encounters involving use of force in Austin, New Orleans, or Orlando, regardless of race?</li>
 <li> Is race a more significant factor in police interactions in New Orleans than in Austin or Orlando?</li>
-</ul><hr>
+</ul>
+
+<p>The reason we are doing this analysis is to better understand cities' relationships to their local governments. Interactions with the police are important and can help define how a population relates to their government. We aim to analyze police violence in general, and then look more into the racial break down of police violence. If a discrepency is found among the data, we have then found an actionable pursuit for policymakers and lawyers to make. After the analysis, these policymakers will have somewhere to look for policy or social discrepencies. </p><hr>
 
 </div>
 </div>
@@ -14362,7 +14364,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The first dataset we want to load is a CSV file called <a href='https://data.nola.gov/Public-Safety-and-Preparedness/NOPD-Use-of-Force-Incidents/9mnw-mbde'>NOPD Use of Force Incidents</a>. We can load a CSV file in Pandas by using <code>pd.read_csv()</code>. After loading the file, we can display the head of the DataFrame before performing any transformation on the DataFrame.</p>
+<p>The first dataset we want to load is a CSV file called <a href='https://data.nola.gov/Public-Safety-and-Preparedness/NOPD-Use-of-Force-Incidents/9mnw-mbde'>NOPD Use of Force Incidents</a>. This dataset represents each use of force incident by the New Orleans Police Department reported per NOPD Use of Force policy (starting in August 2016).</p>
+<p>We can load a CSV file in Pandas by using <code>pd.read_csv()</code>. After loading the file, we can display the head of the DataFrame before performing any transformation on the DataFrame.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14570,7 +14573,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The next two CSV files we want to load are <a href='https://data.austintexas.gov/Public-Safety/2018-Response-to-Resistance-Data/rus9-w6q5'>Austin Police Department Response to Resistance</a> and <a href='https://data.cityoforlando.net/Orlando-Police/OPD-Response-To-Resistance/ap4w-p9kt'>Orlando Police Department Response to Resistance</a>. To load these files, we do the same thing as above. Once again, we can display the heads of the DataFrame before any tidying.</p>
+<p>The next two CSV files we want to load are <a href='https://data.austintexas.gov/Public-Safety/2018-Response-to-Resistance-Data/rus9-w6q5'>Austin Police Department Response to Resistance</a> and <a href='https://data.cityoforlando.net/Orlando-Police/OPD-Response-To-Resistance/ap4w-p9kt'>Orlando Police Department Response to Resistance</a>. Since almost all police response to resistance involves use of force, this data provides a the best comparison to the New Orleans Use of Force data.
+To load these files, we do the same thing as above. Once again, we can display the heads of the DataFrame before any tidying.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16599,8 +16603,8 @@ SERIOUS INJURY                                                               10
 DEATH                                                                         9
 COMPLAINT OF INJURY/PAIN; COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED          4
 COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED; NO COMPLAINT OF INJURY/PAIN       3
-SERIOUS INJURY; MINOR INJURY                                                  1
 SERIOUS INJURY; COMPLAINT OF INJURY/PAIN                                      1
+SERIOUS INJURY; MINOR INJURY                                                  1
 MINOR INJURY; COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED                      1
 Name: Subject Effects, dtype: int64</pre>
 </div>
@@ -17223,7 +17227,7 @@ Name: Subject Effects, dtype: int64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>To visualize the difference in ethnicity of the subject when they were injured or not, as a result of use of force, we should create a stacked bar plot from a cross-tabulation between <b>"Subject Ethnicity"</b> and <b>"Subject Injured"</b> for each city.</p>
-<p>To create the cross-tabulation for ecach city, we will ...</p>
+<p>To create the stacked bar plot from each city, we create a crosstab with the numbers normalized, meaning that we make the numbers appear as a proportion, rather than a raw count. To find the ethnicity breakdown for both injured and not injured, we can calculate the conditional probability, <code>ethnicity_given_injured</code> for each ethnicity for both injured and not injured. After that, we can plot the DataFrame transposed (indicated by <code>.T</code>) and set <code>stacked=True</code> to plot the stacked bar graph, as shown below.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17437,23 +17441,37 @@ Name: Subject Effects, dtype: int64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In this section, we will conduct a hypothesis test on each visualization we created above. For each hypothesis test, the <b>null hypothesis</b> will be that there is no difference between the distributions, and the <b>alternative hypothesis</b> is that there is a different between the distributions.</p><p>If the p-value generated from the hypothesis test is less than <b>0.05</b>, then we will <b>reject</b> the null hypothesis and accept the alternative hypothesis. However, if the p-value is not less than 0.05, then we will <b>fail to reject</b> the null hypothesis.</p>
-<p>For each city, we will conduct a chi-square goodness of fit test to test the differences between expected number of people for each ethnicity involved in police interactions involving use of force and the actual numbers we found. We will also conduct a chi-square test of independence to see if ethnicity has a relationship between whether or not the subject was injured.</p>
+<p>For each city, we will conduct a chi-square goodness of fit test to test whether the difference in use of force ethnic breakdown was statistically significant from the population demographics. We will also perform a chi-square test of independence for each city to see if the differences in ethnic breakdown for injury status were statistically significant for each city.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3> New Orleans </h3>
+<p>To compute the expected breakdown of use of force, based on population ethnic breakdown, we multiply each row in the demographic DataFrame by the number of values in each city's police data. We will compare this to the actual breakdown, which we can compute just by using <code>.value_counts()</code> in the <b>Subject Ethnicity</b> column.</p>
+<p>We start by creating an empty DataFrame, then adding the expected and actual breakdown for each city as columns, with the resulting DataFrame shown below.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_orleans_expected</span> <span class="o">=</span> <span class="p">(</span><span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;New Orleans&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;New Orleans&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="n">nopd_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
-<span class="n">new_orleans_actual</span> <span class="o">=</span> <span class="n">nopd_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> 
-<span class="n">new_orleans_expected</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">expected_actual_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="c1">#New Orleans</span>
+<span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;New Orleans Expected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;New Orleans&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">nopd_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+<span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;New Orleans Actual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nopd_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> 
+
+<span class="c1">#Austin</span>
+<span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Austin Expected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;Austin&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+<span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Austin Actual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> 
+
+<span class="c1">#Orlando</span>
+<span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Orlando Expected&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;Orlando&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+<span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Orlando Actual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> 
+
+<span class="n">expected_actual_df</span>
 </pre></div>
 
      </div>
@@ -17469,18 +17487,86 @@ Name: Subject Effects, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
 
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Ethnicity
-Asian        101.175490
-Black       1941.916667
-Hispanic     179.504902
-White       1106.402941
-Name: New Orleans, dtype: float64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>New Orleans Expected</th>
+      <th>New Orleans Actual</th>
+      <th>Austin Expected</th>
+      <th>Austin Actual</th>
+      <th>Orlando Expected</th>
+      <th>Orlando Actual</th>
+    </tr>
+    <tr>
+      <th>Ethnicity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asian</th>
+      <td>101.175490</td>
+      <td>25</td>
+      <td>214.347188</td>
+      <td>22</td>
+      <td>112.185668</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>Black</th>
+      <td>1941.916667</td>
+      <td>2785</td>
+      <td>199.036675</td>
+      <td>968</td>
+      <td>624.670195</td>
+      <td>968</td>
+    </tr>
+    <tr>
+      <th>Hispanic</th>
+      <td>179.504902</td>
+      <td>80</td>
+      <td>865.044010</td>
+      <td>1088</td>
+      <td>831.193811</td>
+      <td>1088</td>
+    </tr>
+    <tr>
+      <th>White</th>
+      <td>1106.402941</td>
+      <td>439</td>
+      <td>1852.572127</td>
+      <td>1053</td>
+      <td>1562.950326</td>
+      <td>1053</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -17489,13 +17575,20 @@ Name: New Orleans, dtype: float64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For each city, we can perform the chi-square goodness of fit test by calling <code>chisquare()</code> from the <code>scipy.stats</code> library. The two parameters we enter are the actual frequencies and the expected frequencies. The test will give us the chi-square test statistic (the higher the test statistic, the lower the p-value), and the p-value, which we will compare to 0.05 to determine whether or not we <b> reject </b> the null hypothesis.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_orleans_actual</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#New Orleans</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="o">=</span><span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;New Orleans Actual&#39;</span><span class="p">],</span> <span class="n">f_exp</span><span class="o">=</span><span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;New Orleans Expected&#39;</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -17511,17 +17604,13 @@ Name: New Orleans, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Black       2785
-White        439
-Hispanic      80
-Asian         25
-Name: Subject Ethnicity, dtype: int64</pre>
+<pre>Power_divergenceResult(statistic=881.1260543949766, pvalue=1.0986503289423765e-190)</pre>
 </div>
 
 </div>
@@ -17530,19 +17619,20 @@ Name: Subject Ethnicity, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For New Orleans, since the chi-squared test statistic is 881.13, and the p-value is well below 0.05 ( 1.0 * 10<sup>-190</sup>), we <b>reject</b> the null hypothesis which is that there is no relation between the ethnic breakdown of police use of force cases and the population ethnic breakdown.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">races</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hispanic&quot;</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">races</span><span class="p">:</span>
-    <span class="n">mapping</span><span class="p">[</span><span class="n">new_orleans_actual</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">=</span> <span class="n">new_orleans_expected</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
-    
-<span class="n">mapping</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Austin</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="o">=</span><span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Austin Actual&#39;</span><span class="p">],</span> <span class="n">f_exp</span><span class="o">=</span><span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Austin Expected&#39;</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -17564,10 +17654,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{80: 179.5049019607843,
- 2785: 1941.9166666666665,
- 439: 1106.4029411764704,
- 25: 101.17549019607843}</pre>
+<pre>Power_divergenceResult(statistic=3545.9983249139045, pvalue=0.0)</pre>
 </div>
 
 </div>
@@ -17576,14 +17663,20 @@ Name: Subject Ethnicity, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For Austin, since the chi-squared test statistic is 3546, and the p-value is well below 0.05 (0), we <b>reject</b> the null hypothesis which is that there is no relation between the ethnic breakdown of police response to resistance interactions and the population ethnic breakdown.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Perform Chi-Square Goodness of Fit Test</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">f_exp</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Orlando</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="o">=</span><span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Orlando Actual&#39;</span><span class="p">],</span> <span class="n">f_exp</span><span class="o">=</span><span class="n">expected_actual_df</span><span class="p">[</span><span class="s1">&#39;Orlando Expected&#39;</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -17605,7 +17698,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Power_divergenceResult(statistic=881.1260543949766, pvalue=1.0986503289423765e-190)</pre>
+<pre>Power_divergenceResult(statistic=506.9267173440385, pvalue=1.504973371870972e-109)</pre>
 </div>
 
 </div>
@@ -17614,14 +17707,28 @@ Name: Subject Ethnicity, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For Orlando, since the chi-squared test statistic is 506.93, and the pvalue is well below 0.05 (1.5 * 10<sup>109</sup>), we <b>reject</b> the null hypothesis which is that there is no relation between the ethnic breakdown of police response to resistance interactions and the population ethnic breakdown.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We will also perform a chi-square test of independence for each city to see if ethnicity is independent of whether or not the subject was injured in use of force or response to resistance cases.</p>
+<p>All we need to do is create a contingency table (or cross-tabulation), between subject ethnicity and whether or not the subject was injured, and input the table into <code>chi2_contingency()</code> from <code>scipy.stats</code>. This test will give us the chi-square test statistic (the higher the value, the lower the p-value), the p-value, and an array showing the expected ethnic breakdown if ethnicity and whether or not the subject was injured was truly independent. Once again, we will compare the p-value to 0.05 to determine whether or not we <b> reject </b> the null hypothesis.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">nopd_df</span><span class="p">[</span><span class="s1">&#39;Subject Ethnicity&#39;</span><span class="p">],</span> <span class="n">nopd_df</span><span class="p">[</span><span class="s1">&#39;Subject Injured&#39;</span><span class="p">])</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#New Orleans</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">nopd_df</span><span class="p">[</span><span class="s1">&#39;Subject Ethnicity&#39;</span><span class="p">],</span> <span class="n">nopd_df</span><span class="p">[</span><span class="s1">&#39;Subject Injured&#39;</span><span class="p">])</span>
+<span class="n">counts</span>
 </pre></div>
 
      </div>
@@ -17638,6 +17745,92 @@ Name: Subject Ethnicity, dtype: int64</pre>
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Subject Injured</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>Subject Ethnicity</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asian</th>
+      <td>23</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Black</th>
+      <td>2309</td>
+      <td>476</td>
+    </tr>
+    <tr>
+      <th>Hispanic</th>
+      <td>70</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>White</th>
+      <td>322</td>
+      <td>117</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
 
 
@@ -17661,181 +17854,13 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3> Austin </h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">austin_expected</span> <span class="o">=</span> <span class="p">(</span><span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;Austin&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;Austin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
-<span class="n">austin_expected</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Ethnicity
-Asian        214.347188
-Black        199.036675
-Hispanic     865.044010
-White       1852.572127
-Name: Austin, dtype: float64</pre>
-</div>
+<p>For New Orleans, since the chi-squared test statistic is 26.8, and the p-value is well below 0.05 (0.000006), we <b>reject</b> the null hypothesis which is that subject ethnicity is independent of whether or not they were injured from the police encounter.</p>
 
 </div>
-
-</div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">austin_actual</span> <span class="o">=</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> 
-<span class="n">austin_actual</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Hispanic    1088
-White       1053
-Black        968
-Asian         22
-Name: Subject Ethnicity, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">races</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hispanic&quot;</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">races</span><span class="p">:</span>
-    <span class="n">mapping</span><span class="p">[</span><span class="n">austin_actual</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">=</span> <span class="n">austin_expected</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
-    
-<span class="n">mapping</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{1088: 865.0440097799511,
- 968: 199.03667481662592,
- 1053: 1852.5721271393645,
- 22: 214.34718826405867}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Perform Chi-Square Goodness of Fit Test</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">f_exp</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Power_divergenceResult(statistic=3545.9983249139045, pvalue=0.0)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">austin_police_df</span><span class="p">[</span><span class="s1">&#39;Subject Ethnicity&#39;</span><span class="p">],</span> <span class="n">austin_police_df</span><span class="p">[</span><span class="s1">&#39;Subject Injured&#39;</span><span class="p">])</span>
@@ -17855,7 +17880,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
 
 
@@ -17922,7 +17947,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
@@ -17941,7 +17966,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
 
 
@@ -17965,181 +17990,13 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3> Orlando </h3>
+<p>For Austin, since the chi-squared test statistic is 4.62, and the p-value is not below 0.05 (0.20), we <b>fail to reject</b> the null hypothesis which is that subject ethnicity is independent of whether or not they were injured from the police encounter.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">orlando_expected</span> <span class="o">=</span> <span class="p">(</span><span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;Orlando&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">demographic_df</span><span class="p">[</span><span class="s1">&#39;Orlando&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="n">orlando_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
-<span class="n">orlando_expected</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Ethnicity
-Asian        179.798046
-Black       1001.148208
-Hispanic    1332.140065
-White       2504.913681
-Name: Orlando, dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">orlando_actual</span> <span class="o">=</span> <span class="n">orlando_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> 
-<span class="n">orlando_actual</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Black       2808
-White       1733
-Hispanic     451
-Asian         26
-Name: Subject Ethnicity, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">races</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hispanic&quot;</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;White&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">races</span><span class="p">:</span>
-    <span class="n">mapping</span><span class="p">[</span><span class="n">orlando_actual</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">=</span> <span class="n">orlando_expected</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
-    
-<span class="n">mapping</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{451: 1332.14006514658,
- 2808: 1001.1482084690554,
- 1733: 2504.913680781759,
- 26: 179.79804560260587}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Perform Chi-Square Goodness of Fit Test</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_obs</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">f_exp</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Power_divergenceResult(statistic=4213.2271665152675, pvalue=0.0)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">orlando_police_df</span><span class="p">[</span><span class="s1">&#39;Subject Ethnicity&#39;</span><span class="p">],</span> <span class="n">orlando_police_df</span><span class="p">[</span><span class="s1">&#39;Subject Injured&#39;</span><span class="p">])</span>
@@ -18159,7 +18016,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 
 
 
@@ -18226,7 +18083,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
@@ -18245,7 +18102,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
 
 
 
@@ -18269,6 +18126,12 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For Orlando, since the chi-squared test statistic is 16.1, and the p-value is below 0.05 (0.001), we <b>fail to reject</b> the null hypothesis which is that subject ethnicity is independent of whether or not they were injured from the police encounter.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 
 </div>
@@ -18280,8 +18143,8 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We plan to use the data from Austin and Orlando to compare to New Orleans. According to the New Orleans Data Center, Austin and Orlando are two cities that New Orleans aspires to be like due to the growth of their economy and opportunities. We believe that the use of force by police and whether they proportionately act might effect how citizes trust their government. There are opportunities here to include economic data as well. However, for now, we hope to search deeper in whether currently, each city proportionately uses force on criminals based on chi-squared tests or other tests of proportions. We believe that the relationship between the government and its citizens is very important in a city's growth and prosperity and we hope to shine a light on this relationship in New Orleans. </p>
-<p>Additionally, we think that the outcome of the cases when police use force is important. For that reason, we plan on doing similar analysis comparing the distribution of the ethnicities when the subject was injured and not injured.</p>
+<p>We plan to use the data from Austin and Orlando to compare to New Orleans. According to the New Orleans Data Center, Austin and Orlando are two cities that New Orleans aspires to be like due to the growth of their economy and opportunities. We believe that the use of force by police and whether they proportionately act might effect how citizens trust their government. There are opportunities here to include economic data as well. However, for now, we hope to search deeper in whether currently, each city proportionately uses force on criminals based on chi-squared tests or other tests of proportions. We believe that the relationship between the government and its citizens is very important in a city's growth and prosperity and we hope to shine a light on this relationship in New Orleans. </p>
+<p>In conclusion, we found that in all cities, the proportion of Black people who were involved in use of force incidents was disproportional to the given city's demographic. So, there are no avenues of further policy research because this is a consistent issue accross evey city that we analyzed. Despite this, we found that Austin </p>
 </div>
 </div>
 </body>
