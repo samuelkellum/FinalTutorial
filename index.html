@@ -14283,6 +14283,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a href="https://samuelkellum.github.io/FinalTutorial/">https://samuelkellum.github.io/FinalTutorial/</a></p>
+<p><a href="https://github.com/samuelkellum/FinalTutorial">https://github.com/samuelkellum/FinalTutorial</a></p>
 
 </div>
 </div>
@@ -14293,10 +14294,11 @@ a.anchor-link {
 <p><h4>Table of contents:</h4></p>
 <ol>
 <li> Introduction </li>
+<li> Data Collection </li>
 <li> Extraction, Transform and Load </li>
 <li> Exploratory Data Analysis and Data Visualization </li>
 <li> Hypothesis Testing </li>
-<li> Conclusion and Further Study </li>
+<li> Conclusion </li>
 </ol><hr>
 
 </div>
@@ -14305,22 +14307,35 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><h2 align='center'>1. Introduction </h2>
 <br></p>
-<p>Shortly following the death of George Floyd while in custody of the police, the topic of police brutality has gained a lot of attention across the United States. According to <a href='https://thelawdictionary.org/article/what-is-police-brutality/'>The Law Dictionary</a>, "Police brutality is the use of excessive and/or unnecessary force by police when dealing with civilians." Ever since George Floyd's death, there have been protests across the country calling to reform the police system. One of the biggest issues raised during these protests is that black people are disproportionately targeted by the police, and that police are more aggressive when encountering black people.</p><p>This issue is important in New Orleans becasue the city has a high proprtion of black people, almost 60% according to <a href='https://www.census.gov/quickfacts/fact/table/US,neworleanscitylouisiana/LND110210'>the US Census</a>, compared to about 13% nationally. Therefore, this issue of the police disproportionately targeting black people is a serious issue in our community.</p><p>For this project, we will be analyzing whether police interactions in New Orleans involving use of force disproportionately affect people of different ethnicities at different levels. For example, if race is not a factor in police interactions involving use of force, the distribution of ethnicities of these interactions should be similar to the population demographics.</p>
-<p>Additionally, we will analyze for police interactions in New Orleans involving use of force, whether people of different races are more likely to get injured.</p>
-<p>We will also compare the results in New Orleans to Austin and Orlando.</p><p>In this analysis, we will answer the following questions:</p>
+<p>Shortly following the death of George Floyd while in the custody of the police, the topic of police brutality has gained a lot of attention across the United States. According to <a href='https://thelawdictionary.org/article/what-is-police-brutality/'>The Law Dictionary</a>, "Police brutality is the use of excessive and/or unnecessary force by police when dealing with civilians." Ever since George Floyd's death, there have been protests across the country calling to reform the police system. One of the biggest issues raised during these protests is that black people are disproportionately targeted by the police, and that police are more aggressive when encountering black people.</p><p>This issue is important in New Orleans because the city has a high proportion of black people, almost 60% according to <a href='https://www.census.gov/quickfacts/fact/table/US,neworleanscitylouisiana/LND110210'>the US Census</a>, compared to about 13% nationally. compared to about 13% nationally. Therefore, this issue of the police disproportionately targeting black people is a serious issue in our community.</p><p>For this project, we will be analyzing whether police interactions in New Orleans involving use of force disproportionately affect people of different ethnicities at different levels. For example, if race is not a factor in police interactions involving use of force, the distribution of ethnicities of these interactions should be similar to the population demographics.</p>
+<p>Additionally, we will analyze for all police interactions in New Orleans involving use of force, whether people of different races are more likely to get injured.</p>
+<p>We will also compare the results in New Orleans to Austin and Orlando. According to <a href='https://www.datacenterresearch.org/'>The New Orleans Data Center</a>, Austin and Orlando are two cities that New Orleans aspires to be like due to the growth of their economy and opportunities. We want to explore how the police in these cities compare to the results we find in New Orleans. We believe that the relationship between the police and its citizens is very important in a city's growth and prosperity, and we hope to shine a light on this relationship in New Orleans.</p><p>The reason we are doing this analysis is to better understand cities' relationships to their local governments. Interactions with the police are important and can help define how a population relates to their government. We aim to analyze police violence in general, and then look more into the racial breakdown of police violence. If a discrepancy is found among the data, we have then found an actionable pursuit for policymakers and lawyers to make. After the analysis, these policymakers will have somewhere to look for policy or social discrepancies.</p><p><p>In this analysis, we will answer the following questions:</p></p>
 <ul>
 <li> Are black people in New Orleans more likely to be involved in police interactions involving use of force? </li>
-<li> Are people more likely to be injured in police encounters involving use of force in Austin, New Orleans, or Orlando, regardless of race?</li>
+<li> Are certain races more likely to be injured in police encounters involving use of force in Austin, New Orleans, or Orlando?</li>
 <li> Is race a more significant factor in police interactions in New Orleans than in Austin or Orlando?</li>
-</ul>
-
-<p>The reason we are doing this analysis is to better understand cities' relationships to their local governments. Interactions with the police are important and can help define how a population relates to their government. We aim to analyze police violence in general, and then look more into the racial break down of police violence. If a discrepency is found among the data, we have then found an actionable pursuit for policymakers and lawyers to make. After the analysis, these policymakers will have somewhere to look for policy or social discrepencies. </p><hr>
+</ul><hr>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align='center'>2. Extraction, Transform and Load </h2>
+<h2 align='center'>2. Data Collection </h2><hr>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The first thing we need to do is collect all of the data we want to use for this project. For this project, we will be using three CSV files. Each CSV file contains information on the city police department's Use of Force or Response to Resistance. We will also extract census data from one URL containing demographic information on all three cities.</p>
+<p>The first dataset we collected is a CSV file called <a href='https://data.nola.gov/Public-Safety-and-Preparedness/NOPD-Use-of-Force-Incidents/9mnw-mbde'>NOPD Use of Force Incidents</a>. This dataset represents each use of force incident by the New Orleans Police Department reported per NOPD Use of Force policy (starting in August 2016).</p>
+<p>The next two CSV files are <a href='https://data.austintexas.gov/Public-Safety/2018-Response-to-Resistance-Data/rus9-w6q5'>Austin Police Department Response to Resistance</a> and <a href='https://data.cityoforlando.net/Orlando-Police/OPD-Response-To-Resistance/ap4w-p9kt'>Orlando Police Department Response to Resistance</a>. Since almost all police response to resistance involves use of force, this data provides the best comparison to the New Orleans Use of Force data.</p>
+<p>We will also use census data containing racial demographic information for each city. One great feature of <a href='https://www.census.gov/'>census.gov</a> is that it allows users to compare multiple cities on a single table side-by-side. Not only can create a <a href='https://www.census.gov/quickfacts/fact/table/orlandocityflorida,neworleanscitylouisiana,austincitytexas/LND110210'>side-by-side table</a> to compare the racial demographics on the website, but we can easily extract this table from the URL for this project.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align='center'>3. Extraction, Transform and Load </h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14330,7 +14345,6 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The first thing we need to do is collect all of the data we want to use for this project. For this project, we will load three CSV files. Each CSV file contains information on the city police department's Use of Force or Response to Resistance. We will also extract census data from one URL containing demographic information on all three cities.</p>
 <p>In the first block of code below, we are importing the libraries we will need for the project.</p>
 
 </div>
@@ -14364,8 +14378,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The first dataset we want to load is a CSV file called <a href='https://data.nola.gov/Public-Safety-and-Preparedness/NOPD-Use-of-Force-Incidents/9mnw-mbde'>NOPD Use of Force Incidents</a>. This dataset represents each use of force incident by the New Orleans Police Department reported per NOPD Use of Force policy (starting in August 2016).</p>
-<p>We can load a CSV file in Pandas by using <code>pd.read_csv()</code>. After loading the file, we can display the head of the DataFrame before performing any transformation on the DataFrame.</p>
+<p>Next, we will load the CSV police files from each city. We can load a CSV file in Pandas by using <code>pd.read_csv()</code>. After loading the file, we can display the head of the DataFrame before performing any transformation on the DataFrame, as shown below for New Orleans.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14374,7 +14387,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nopd_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../_data/NOPD_Use_Of_Force_Incidents.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#New Orleans</span>
+<span class="n">nopd_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../_data/NOPD_Use_Of_Force_Incidents.csv&#39;</span><span class="p">)</span>
 <span class="n">nopd_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -14573,8 +14587,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The next two CSV files we want to load are <a href='https://data.austintexas.gov/Public-Safety/2018-Response-to-Resistance-Data/rus9-w6q5'>Austin Police Department Response to Resistance</a> and <a href='https://data.cityoforlando.net/Orlando-Police/OPD-Response-To-Resistance/ap4w-p9kt'>Orlando Police Department Response to Resistance</a>. Since almost all police response to resistance involves use of force, this data provides a the best comparison to the New Orleans Use of Force data.
-To load these files, we do the same thing as above. Once again, we can display the heads of the DataFrame before any tidying.</p>
+<p>We can do the same thing for Austin's and Orlando's police data. Once again, we can display the heads of the DataFrame before any tidying.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14583,7 +14596,8 @@ To load these files, we do the same thing as above. Once again, we can display t
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">austin_police_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../_data/Austin_Response_To_Resistance.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Austin</span>
+<span class="n">austin_police_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../_data/Austin_Response_To_Resistance.csv&#39;</span><span class="p">)</span>
 <span class="n">austin_police_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -14785,7 +14799,8 @@ To load these files, we do the same thing as above. Once again, we can display t
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">orlando_police_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../_data/OPD_Response_To_Resistance.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Orlando</span>
+<span class="n">orlando_police_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../_data/OPD_Response_To_Resistance.csv&quot;</span><span class="p">)</span>
 <span class="n">orlando_police_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -14984,8 +14999,7 @@ To load these files, we do the same thing as above. Once again, we can display t
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now that we have the police data, we now want to load census data containing racial demographic information for each city. One great feature of <a href='https://www.census.gov/'>census.gov</a> is that it allows users to compare multiple cities on a single table side-by-side. Not only can create a <a href='https://www.census.gov/quickfacts/fact/table/orlandocityflorida,neworleanscitylouisiana,austincitytexas/LND110210'>side-by-side table</a> to compare the racial demographics on the website, but we can easily extract this table from the URL into a Pandas DataFrame.</p>
-<p>To do this, we can use <code>requests.get()</code> from the library we imported, to send a GET request (a request to get the information from a website) to the side-by-side table URL that we will pass as a paramater.</p>
+<p>Next, we need to extract the census data from the <a href='https://www.census.gov/quickfacts/fact/table/orlandocityflorida,neworleanscitylouisiana,austincitytexas/LND110210'>side-by-side</a> table we created on <a href='https://www.census.gov/'>census.gov</a>. We can use <code>requests.get()</code> from the library we imported, to send a GET request (a request to get the information from a website) to the side-by-side table's URL that we will pass as a parameter.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15636,9 +15650,9 @@ To load these files, we do the same thing as above. Once again, we can display t
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The last thing we should do to tidy this data is to map <b>Race and Hispanic Origin</b> into the following categories: Asian, Black, Hispanic, and White. We should do this because these are the categories for race/ethnicity in the Orlando DataFrame, whereas New Orleans and Austin provide more categories. Since Orlando has fewer categories for race/ethnicity than the rest of the data, we have to group the number of categories for race/ethnciity for the rest of the data.</p>
-<p>Since the city police data does not contain information on mixed individuals, we will exclude "Two of more races" from our demographic DataFrame.</p>
-<p>After mapping the Data, which will automatically any column we do not list as a key (in the mapping dictionary), we should use <code>groupby()</code> to group each of the categories, then sum the combined proprtions of each group.</p>
+<p>The last thing we should do to tidy this data is to map <b>Race and Hispanic Origin</b> into the following categories: Asian, Black, Hispanic, and White. We should do this because these are the categories for race/ethnicity in the Orlando DataFrame, whereas New Orleans and Austin provide more categories. Since Orlando has fewer categories for race/ethnicity than the rest of the data, we have to group the number of categories for race/ethncity for the rest of the data.</p>
+<p>Since the city police data does not contain information on mixed individuals, we will exclude "Two or more races" from our demographic DataFrame.</p>
+<p>After mapping the Data, which will automatically any column we do not list as a key (in the mapping dictionary), we should use <code>groupby()</code> to group each of the categories, then sum the combined proportions of each group.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16011,7 +16025,7 @@ To load these files, we do the same thing as above. Once again, we can display t
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If you look at the row matching to index 3 for the NOPD DataFrame, you can tell that <b>Subject Ethnicity</b> is "White | Black" and <b>Subject Injured</b> is "Yes | Yes." This represents a NOPD Use of Force case involving two subjects. Where the first subject was white and was injured, and the second subject was black and injured. As shown below, there many rows involving more than two subjects.</p>
+<p>If you look at the row matching to index 3 for the NOPD DataFrame, you can tell that <b>Subject Ethnicity</b> is "White | Black" and <b>Subject Injured</b> is "Yes | Yes." This represents a NOPD Use of Force case involving two subjects. Where the first subject was white and was injured, and the second subject was black and injured. As shown below, there are many rows involving more than two subjects.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16064,7 +16078,7 @@ Name: Subject Ethnicity, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can write code to split rows with multiple subjects into separate rows by using <code>.apply()</code>, which will apply the <code>lamba</code> function splitting entires delimited by the regular expression <code>r'\s*\|\s*'</code> into multiple elements. We will use <code>.explode()</code> to transform the delimited elements into new rows.</p>
+<p>We can write code to split rows with multiple subjects into separate rows by using <code>.apply()</code>, which will apply the <code>lambda</code> function splitting entires delimited by the regular expression <code>r'\s*\|\s*'</code> into multiple elements. We will use <code>.explode()</code> to transform the delimited elements into new rows.</p>
 <p>The result is a new row for each NOPD Use of Force case involving multiple subjects.</p>
 
 </div>
@@ -16336,7 +16350,7 @@ Name: Subject Race, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Next, since the subject races/ethnicities were listed differently for each city, we need to map the <b>Suject Race</b> for each city in a consistent format. For Austin, we are excluding the seven mixed subjects since there is no information on mixed subjects for New Orleans or Orlando.</p>
+<p>Next, since the subject races/ethnicities were listed differently for each city, we need to map the <b>Subject Race</b> for each city in a consistent format. For Austin, we are excluding the seven mixed subjects since there is no information on mixed subjects for New Orleans or Orlando.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16400,7 +16414,7 @@ Name: Subject Race, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since Orlando and Austin have an additional column indicating whether or not the subject was Hispanic, whereas New Orleans had one column for race and ethnicity, we need to combine the <b>Subject Race</b> and <b>Subject Ethnicity</b> columns into one column. For Austin and Orlando's data, we can do that by converting the Subject's "Race" to Hispanic, based on whether their "Ethnicity" is listed as Hispanic, then setting the <b>Subject Ethnicity</b> values to the result of the <b>Subject Race</b> column.</p>
+<p>Since Orlando and Austin have an additional column indicating whether or not the subject was Hispanic, whereas New Orleans had one column for race and ethnicity, we need to combine the <b>Subject Race</b> and <b>Subject Ethnicity</b> columns into one column. For Austin and Orlando's data, we can do that by converting the Subject's "Race" to Hispanic, based on whether their ethnicity is listed as Hispanic, then setting the <b>Subject Ethnicity</b> values to the result of the <b>Subject Race</b> column.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16428,20 +16442,6 @@ Name: Subject Race, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">orlando_police_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">orlando_police_df</span><span class="p">[</span><span class="s1">&#39;Subject Ethnicity&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;HI&quot;</span><span class="p">,</span> <span class="s1">&#39;Subject Race&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hispanic&quot;</span>
 <span class="n">orlando_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Ethnicity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">orlando_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Race&quot;</span><span class="p">]</span>
 <span class="k">del</span> <span class="n">orlando_police_df</span><span class="p">[</span><span class="s2">&quot;Subject Race&quot;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -16498,7 +16498,7 @@ Name: Subject Injured, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Orlando requires a simple mapping to convert the two "OffenderInjured" values, as shown below into "Yes."</p>
+<p>Orlando requires a simple mapping to convert the two "OffenderInjured" values, as shown below, into "Yes."</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16603,8 +16603,8 @@ SERIOUS INJURY                                                               10
 DEATH                                                                         9
 COMPLAINT OF INJURY/PAIN; COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED          4
 COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED; NO COMPLAINT OF INJURY/PAIN       3
-SERIOUS INJURY; COMPLAINT OF INJURY/PAIN                                      1
 SERIOUS INJURY; MINOR INJURY                                                  1
+SERIOUS INJURY; COMPLAINT OF INJURY/PAIN                                      1
 MINOR INJURY; COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED                      1
 Name: Subject Effects, dtype: int64</pre>
 </div>
@@ -16618,7 +16618,7 @@ Name: Subject Effects, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Therefore, we have to map the results in this column indicating whether or not the subject was injured, applying the same criteria Orlando or New Orleans would use to classify if someone was injured or not, which is through the prospective of the officer.</p>
+<p>Therefore, we have to map the results in this column indicating whether or not the subject was injured, applying the same criteria Orlando or New Orleans would use to classify if someone was injured or not, which is through the perspective of the officer.</p>
 <p>The biggest reason we want to do this is to keep Austin's data consistent with New Orleans and Orlando, but we are making a big assumption by classifying (as an example) "COMPLAINT OF INJURY/PAIN BUT NONE OBSERVED" as "No" in the new <b>Subject Injured</b> column.</p>
 
 </div>
@@ -17014,12 +17014,12 @@ Name: Subject Effects, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align='center'> 3. Exploratory Data Analysis and Data Visualization </h2>
+<h2 align='center'> 4. Exploratory Data Analysis and Data Visualization </h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To compare the distributions between subject ethnicity for the each city's police department and racial demographics of that city, a side-by-side pie chart would be the best visualization.</p>
+<p>To compare the distributions between subject ethnicity for each city's police department and racial demographics of that city, a side-by-side pie chart would be the best visualization.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17357,7 +17357,7 @@ Name: Subject Effects, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looking at this figure, we can see that White people in police interactions involving use of force were more likely to be classified as injured than not injured, whereas Black people in police interactions were less likely to be classified as injured. However, it not as easy to notice a difference in the two bar graphs.</p>
+<p>Looking at this figure, we can see that White people in police interactions involving use of force were more likely to be classified as injured than not injured, whereas Black people in police interactions were less likely to be classified as injured. However, it is not as easy to notice a difference in the two bar graphs.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17428,19 +17428,19 @@ Name: Subject Effects, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In the next section, we will test to see whether the differences in proprtions for each city we visualized were statistically significant.</p>
+<p>In the next section, we will test to see whether the differences in proportions for each city we visualized were statistically significant.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 align='center'> 4. Hypothesis Testing </h2>
+<h2 align='center'> 5. Hypothesis Testing </h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this section, we will conduct a hypothesis test on each visualization we created above. For each hypothesis test, the <b>null hypothesis</b> will be that there is no difference between the distributions, and the <b>alternative hypothesis</b> is that there is a different between the distributions.</p><p>If the p-value generated from the hypothesis test is less than <b>0.05</b>, then we will <b>reject</b> the null hypothesis and accept the alternative hypothesis. However, if the p-value is not less than 0.05, then we will <b>fail to reject</b> the null hypothesis.</p>
+<p>In this section, we will conduct a hypothesis test on each visualization we created above. For each hypothesis test, the <b>null hypothesis</b> will be that there is no difference between the distributions, and the <b>alternative hypothesis</b> is that there is a difference between the distributions.</p><p>If the p-value generated from the hypothesis test is less than <b>0.05</b>, then we will <b>reject</b> the null hypothesis and accept the alternative hypothesis. However, if the p-value is not less than 0.05, then we will <b>fail to reject</b> the null hypothesis.</p>
 <p>For each city, we will conduct a chi-square goodness of fit test to test whether the difference in use of force ethnic breakdown was statistically significant from the population demographics. We will also perform a chi-square test of independence for each city to see if the differences in ethnic breakdown for injury status were statistically significant for each city.</p>
 
 </div>
@@ -17710,7 +17710,7 @@ Name: Subject Effects, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For Orlando, since the chi-squared test statistic is 506.93, and the pvalue is well below 0.05 (1.5 * 10<sup>109</sup>), we <b>reject</b> the null hypothesis which is that there is no relation between the ethnic breakdown of police response to resistance interactions and the population ethnic breakdown.</p>
+<p>For Orlando, since the chi-squared test statistic is 506.93, and the p-value is well below 0.05 (1.5 * 10<sup>109</sup>), we <b>reject</b> the null hypothesis which is that there is no relation between the ethnic breakdown of police response to resistance interactions and the population ethnic breakdown.</p>
 
 </div>
 </div>
@@ -18138,13 +18138,12 @@ Name: Subject Effects, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align='center'> 5. Conclusion and Further Study </h2>
+<h2 align='center'> 6. Conclusion </h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We plan to use the data from Austin and Orlando to compare to New Orleans. According to the New Orleans Data Center, Austin and Orlando are two cities that New Orleans aspires to be like due to the growth of their economy and opportunities. We believe that the use of force by police and whether they proportionately act might effect how citizens trust their government. There are opportunities here to include economic data as well. However, for now, we hope to search deeper in whether currently, each city proportionately uses force on criminals based on chi-squared tests or other tests of proportions. We believe that the relationship between the government and its citizens is very important in a city's growth and prosperity and we hope to shine a light on this relationship in New Orleans. </p>
-<p>In conclusion, we found that in all cities, the proportion of Black people who were involved in use of force incidents was disproportional to the given city's demographic. So, there are no avenues of further policy research because this is a consistent issue accross evey city that we analyzed. Despite this, we found that Austin </p>
+<p>In conclusion, we found that in all cities, the proportion of Black people who were involved in use of force incidents was disproportional to the given city's demographic. So, there are no avenues of further policy research because this is a consistent issue across every that we analyzed. Despite this, we found that in Austin, the proportion of ethnicities that were injured vs those who were not injured was not statistically significant. Therefore, we suggest to lawmakers and policymakers to investigate more into policy discrepancies between New Orleans and Austin to improve on our policing laws. </p><p>However, it is important to note that the outcomes that we analyzed, i.e. the police data, are representative of real human interactions. Since this is true, we can also assume that human assumptions and biases are embedded into the data. Essentially, we can't take this data as truth. The cities' population data and use of force data might be even more discrepant than they currently are, or more unlikely, they are less discrepant. Police could be underreporting injuries or overreporting for a given race. Another point that is important in this discussion is how complex the inputs are to this outcome (police data). Socioeconomic status, each city's history of racial equality, and practically countless more factors go into these outcomes. Despite this, with the data we have, we think that analyzing policy would be a good start for lawmakers in trying to create better policing for the city of New Orleans. </p>
 </div>
 </div>
 </body>
